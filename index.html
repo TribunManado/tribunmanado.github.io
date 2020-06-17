@@ -87,6 +87,7 @@
 		background-image: url("https://tribunmanado.github.io/background.jpg");
 		background-repeat: repeat-y;
 		background-size: 100%;
+		position: relative;
 	}
 	#koran {
 		height: 582px;
@@ -94,6 +95,17 @@
 		position: relative;
 		top: 60px;
 		box-shadow: 10px 10px 10px #000000;
+	}
+	#tooltip-alfa {
+		border-radius: 5px;
+		background-color: #404040;
+		position: absolute;
+		padding: 4px 10px;
+		top: -36px;
+		left: 113px;
+		font-size: 14px;
+		color: #ffffff;
+		display: none;
 	}
 	@media screen and (max-width: 480px) {
 		#header-Alfa {
@@ -147,6 +159,8 @@ $(document).ready(function() {
 	$("#tombol-daftar").attr("href", "https://docs.google.com/forms/d/e/1FAIpQLSfPrSXvyOkD3ns24w0sA6oLFq_SOlGyGXHu9JKIoCnDnRkJ-Q/viewform");
 	$("#koran-tribun-terbaru").attr("href", "https://tribunmanado.github.io/"+urlTerbaru+"/")
 	$("#gambar-tribun-manado").attr("src", "https://tribunmanado.github.io/"+urlTerbaru+"/files/shot.png");;
+	$('[data-toggle="tooltip"]').tooltip();
+	$("#tooltip-alfa").delay(1000).fadeIn(100).delay(3000).fadeOut();
 });
 </script>
 </head>
@@ -169,7 +183,8 @@ $(document).ready(function() {
 	</header>
 	<section>
 		<div id="sec-alfa" class="container-fluid">
-			<div id="koran" class="mx-auto">
+			<div id="koran" class="mx-auto" data-toggle="tooltip" data-placement="top" title="Klik di koran!">
+				<div id="tooltip-alfa" class="mx-auto">Klik di koran!</div>
 				<a id="koran-tribun-terbaru" href="#">
 					<img id="gambar-tribun-manado" alt="Koran Digital Tribun Manado Terbaru" src="" class="d-block" width="325">
 				</a>
